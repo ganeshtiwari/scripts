@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#!/usr/bin/env python3
-=======
 #! python3
->>>>>>> cc1e0fc1916cb6d3f59dbde70a61c61d2614d12e
 
 import os
 import re
