@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 import youtube_dl
 
 
-
 def get_video_url(query):
     query = {'search_query': '{}'.format(query)}
     url = 'https://www.youtube.com/results?' + urlencode(query)
@@ -38,10 +37,12 @@ def main():
     """
     Start.
     """
-    query = sys.argv[1]
+    query = sys.argv[1:]
+    if sys.argv[2]:
+        download_type = sys.argv[2]
     video_url = get_video_url(query)
     download(video_url)
 
+
 if __name__ == '__main__':
     main()
-
