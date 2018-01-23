@@ -8,6 +8,9 @@ import youtube_dl
 
 
 def get_video_url(query):
+    """
+    Returns the top video url of the youtube searhc query.
+    """
     query = {'search_query': '{}'.format(query)}
     url = 'https://www.youtube.com/results?' + urlencode(query)
     response = urlopen(url)
