@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 from urllib.request import urlopen
 from urllib.parse import urlencode
 from bs4 import BeautifulSoup
@@ -33,7 +34,9 @@ def download(video_url):
         }],
     }
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+        os.chdir('/home/gunace/Desktop')
         ydl.download([video_url])
+
 
 
 def main():
@@ -41,8 +44,6 @@ def main():
     Start.
     """
     query = sys.argv[1:]
-    if sys.argv[2]:
-        download_type = sys.argv[2]
     video_url = get_video_url(query)
     download(video_url)
 
