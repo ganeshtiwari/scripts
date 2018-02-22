@@ -14,6 +14,7 @@ def _main():
     end = int(sys.argv[2])
 
     for chapter in range(start, end + 1):
+        print('Initiating Donwnload from chapter {}\n'.format(chapter))
         try:
             handle_download(chapter)
             time.sleep(1)

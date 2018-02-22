@@ -45,7 +45,9 @@ def get_manga(url, chapter):
                                   part, to_dir, chapter], daemon=True)
         thread_list.append(thread)
         thread.start()
-    print('Active connections: {}'.format(threading.active_count()))
+    print('Found {} pages\n'.format(threading.active_count()))
+    time.sleep(1)
+    print('Initiating {} connections\n'.format(threading.active_count()))
 
     for thread in thread_list:
         thread.join()
