@@ -18,7 +18,7 @@ def get_video_url(query):
     soup = BeautifulSoup(response.read().decode(), 'html.parser')
     for tag in soup.find_all('a', {'rel': 'spf-prefetch'}):
         video_url = 'https://youtube.com' + tag['href']
-        return video_url
+        yield video_url
 
 
 def download(video_url):
